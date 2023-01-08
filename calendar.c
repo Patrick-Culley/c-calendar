@@ -6,7 +6,7 @@ void calculate_days(int month) {
 	int count; 
 
 	for (count = 1; count <= days[month]; count++) {
-		printf(" %d   ", count); 
+		printf("%5d", count);		// right-justified and left-space-padded in 5-character-wide field
 		if (count % 7 == 0) {
 			printf("\n");
 		}; 
@@ -26,10 +26,11 @@ int main() {
 
 	year = atoi(buff); 
 
-	// print months 
+	// print months & days 
 	for (counter = 0;  counter < 12; counter++) {
-		printf(" =================== %s ======================\n\n", month[counter]);
-		calculate_days(counter); 
+		printf(" =================== %s ================\n\n", month[counter]);
+		printf(" Sun  Mon  Tues  Wed  Thurs  Fri  Sat\n");
+		calculate_days(counter);		// function print days of the current month 
 	}; 
 
 	return 0; 
